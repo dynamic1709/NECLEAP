@@ -24,7 +24,7 @@ body {
   
   .subject {
     margin-bottom: 15px;
-  text-align: end;
+    text-align:end;
   }
   
   input {
@@ -50,3 +50,4 @@ body {
   font-weight: bold;
   text-align:left;
   }
+  
