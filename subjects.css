@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.year-body {
+    background-color: #000;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.year-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgb(5, 156, 211);
+}
+
+.heading {
+    color: rgb(5,156, 211);
+    margin-bottom: 30px;
+    margin-left:60px;
+    margin-right:60px;
+    font-size: 2rem;
+}
+
+.year-table {
+    color: rgb(209, 74, 214);
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+.year-table td {
+    padding: 15px 20px;
+}
+
+select.form-control {
+    background-color: #000;
+    color: rgb(194, 63, 220);
+    border: 2px solid rgb(214, 63, 197);
+    border-radius: 5px;
+}
+
+select.form-control:focus {
+    background-color: #000;
+    color: rgb(221, 64, 215);
+    border-color: rgb(201, 54, 182);
+    box-shadow: 0 0 10px rgb(208, 45, 210);
+}
+
+.home-button1{
+    height:35px;
+    width:120px;
+    border-radius:20px;
+    border-width:0px;
+    background:linear-gradient(to right,#743ad5,#d53a9d);
+    border-width:3px;
+    border-color:white;
+   color: white;
+   font-size:15px;
+}
+
+.para{
+    color:rgb(18, 149, 200);
+    font-size: 20px;
+    margin-top:25px;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    height: 35px;
+    width: 120px;
+    border-radius: 20px;
+    background: linear-gradient(to right,#d53a9d,rgb(18, 149, 200));
+    border: 1px solid white;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top:15px;
+}
+
+.back-button:hover {
+    background: linear-gradient(to right, #34d1f9, #6bfefc);
+    box-shadow: 0 0 10px #41f6ff;
+}
+
+.sub-button1{
+    height:50px;
+    width:120px;
+    color:rgb(5, 156, 211);
+    margin-right:20px;
+    background-color: transparent;
+    border-width:1px;
+    border-color:#ffffff;
+    font-weight: bold;
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.sub-button2{
+    height:50px;
+    width:120px;
+    color:rgb(5, 156, 211);
+    margin-left:20px;
+    background-color: transparent;
+    border-width:1px;
+    border-color:#ffffff;
+    font-weight: bold;
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.sub-button1:hover {
+    box-shadow: 0 0 30px #0a60ca;
+}
+.sub-button2:hover {
+        box-shadow: 0 0 30px #0a60ca;
+}

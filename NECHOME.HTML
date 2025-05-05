@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="NECHOME.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>NEC</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg Nav-color navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">WELCOME <span style='font-size:30px;'>&#128075;</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-4" id="navbarNav">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="#">Prepare Well - All the best <span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="feedback.html">Give us Feedback</a>
+                <a class="nav-link active" href="http://192.168.31.228:8080" target="_blank">Results</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="home-bg-container d-flex flex-column align-items-center justify-content-center">
+        <div class="logo-container border-color">
+            <img src="NEClogonew.png" class="NECLOGO" alt="NEC Logo">
+        </div>
+
+        <p class="mt-4 text-center">Free Learning Platform For Better Result</p>
+
+        <div class="mt-3 text-center">
+            <ul class="Course-container">
+                <li>Course : B.Tech</li>
+                <li>
+                    Branch :
+                    <select id="select1" onchange="setLink()">
+                        <option value="">SELECT</option>
+                        <option value="AI">CSE(AI)</option>
+                        <option value="AI&ML">CSE(AI&ML)</option>
+                        <option value="CSE">CSE</option>
+                        <option value="IT">IT</option>
+                        <option value="CS">CSE(CS)</option>
+                        <option value="DS">CSE(DS)</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                    </select>
+                </li>
+                <li>Board : JNTUK</li>
+                <li>
+                    Regulation :
+                    <select id="select2" onchange="setLink()">
+                        <option value="">SELECT</option>
+                        <option value="R23">R23</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mt-3">
+            <button class="home-button1" id="goButton" onclick="goToLink()" disabled>Get Started</button>
+        </div>
+
+        <p class="mt-2 text-center">
+           
+            "Use SGPA for semester grades and CGPA for overall grades."
+            
+        </p>
+
+        <div class="mt-3 d-flex justify-content-center">
+            <a href="SGPA-selecting.html" class="mr-3">
+                <button class="home-button2">SGPA Calculator</button>
+            </a>
+            <a href="cgpa.html" class="ml-3">
+                <button class="home-button2">CGPA Calculator</button>
+            </a>
+        </div>
+
+        <p class="Developed mt-3 text-center" data-toggle="modal" data-target="#exampleModal">
+            Developed By: <a href="#"><span class="span">B.Dhanush & T.Yasodha</span></a>
+        </p>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">About Us</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Hello <span style='font-size:30px;'>&#128075;</span> <br>
+                        This is B.Dhanush and T.Yasodha <br>
+                        Currently Pursing B.Tech in Narasaraopet Engineering College - NRT.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="feedback.html"><button class="btn btn-primary">Give Feedback</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let choice1 = "";
+        let choice2 = "";
+        let finalLink = "";
+
+        function setLink() {
+            choice1 = document.getElementById('select1').value;
+            choice2 = document.getElementById('select2').value;
+            const button = document.getElementById('goButton');
+
+            if (choice1 === "AI" && choice2 === "R23") {
+                finalLink = "AI-selecting.html";
+            } else if (choice1 === "AI&ML" && choice2 === "R23") {
+                finalLink = "AIML-selecting.html";
+            } else if (choice1 === "CSE" && choice2 === "R23") {
+                finalLink = "CSE-selecting.html";
+            } else if (choice1 === "IT" && choice2 === "R23") {
+                finalLink = "IT-selecting.html";
+            } else if (choice1 === "CS" && choice2 === "R23") {
+                finalLink = "CS-selecting.html";
+            } else if (choice1 === "DS" && choice2 === "R23") {
+                finalLink = "DS-selecting.html";
+            } else if (choice1 === "ECE" && choice2 === "R23") {
+                finalLink = "ECE-selecting.html";
+            } else if (choice1 === "EEE" && choice2 === "R23") {
+                finalLink = "EEE-selecting.html";
+            } else if (choice1 === "CIVIL" && choice2 === "R23") {
+                finalLink = "CIVIL-selecting.html";
+            } else if (choice1 === "MECH" && choice2 === "R23") {
+                finalLink = "MECH-selecting.html";
+            } else {
+                finalLink = "";
+            }
+
+            if (finalLink) {
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+            }
+        }
+
+        function goToLink() {
+            if (finalLink) {
+                window.open(finalLink);
+            }
+        }
+    </script>
+</body>
+</html>

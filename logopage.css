@@ -1,0 +1,69 @@
+body {
+    background-color: #090809;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nec-logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 100px;
+    color:linear-gradient(to right,#743ad5,#d53a9d);
+    letter-spacing: 20px;
+    display: flex;
+    transform: scale(1.3);
+    text-shadow: 0 0 10px #c54ddd, 0 0 30px #c54ddd, 0 0 50px #c54ddd;
+}
+
+.nec-logo span {
+    display: inline-block;
+    animation: wave 1.5s infinite ease-in-out, flicker 3s infinite;
+    transform-origin: center bottom;
+    cursor: pointer;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+/* Wave animation with different delay for each letter */
+.nec-logo span:nth-child(1) {
+    animation-delay: 0s, 0s;
+}
+.nec-logo span:nth-child(2) {
+    animation-delay: 0.2s, 0s;
+}
+.nec-logo span:nth-child(3) {
+    animation-delay: 0.4s, 0s;
+}
+
+/* Wave keyframes */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* Hover Effect: Grow and Glow */
+.nec-logo span:hover {
+    transform: scale(1.3);
+    text-shadow: 0 0 10px #c54ddd, 0 0 30px #c54ddd, 0 0 50px #c54ddd;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+    0% { opacity: 1; }
+    20% { opacity: 0.9; }
+    40% { opacity: 0.8; }
+    60% { opacity: 0.95; }
+    80% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-bg-container {
+    background-color: black;
+    min-height: 100vh;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.Nav-color {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.NECLOGO {
+    height:120px;
+    width:120px;
+    margin:10px;
+    margin-top:25px;
+}
+
+.logo-container{
+    height:170px;
+    width:170px;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width:5px;
+    text-align: center;
+    margin-top:5%;
+    box-shadow: 0 0 20px rgb(216, 48, 238);
+}
+
+.border-color {
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+p {
+    text-align: center;
+    color: #d53a9d;
+    margin-top: 10px;
+    margin-bottom:5px;
+    font-size: 16px;
+}
+
+.Course-container {
+    font-size: 18px;
+    font-weight: bold;
+    color: #743ad5;
+    margin-top: 10px;
+    margin-bottom:15px;
+    list-style-type:style circle;
+    padding: 0;
+    text-align: center;
+}
+
+.Course-container li {
+    margin-bottom: 12px;
+}
+
+.home-button1 {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border-width: 0px;
+    background: linear-gradient(to right, #743ad5, #d53a9d);
+    border-width: 3px;
+    border-color: white;
+    color: white;
+    font-size: 15px;
+    margin-top: 5px;
+    cursor: pointer; 
+}
+
+.home-button2 {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: white;
+    background: linear-gradient(to top, #743ad5, #d53a9d);
+    color: white;
+    font-size: 15px;
+    margin-top:0px;
+    cursor: pointer;
+}
+
+.home-button2:hover {
+    background-color: transparent;
+    cursor: grab;
+    color: rgb(0, 166, 255);
+}
+
+select {
+    color: #d53a9d;
+    background-color: transparent;
+    font-size: 10px;
+    padding: 5px 10px; 
+    border: 1px solid #d53a9d; 
+    border-radius: 5px; 
+}
+
+.Developed {
+    color: white;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.span {
+    color: #d53a9d;
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: 200;
+    background-color: transparent;
+}
+
+.span:hover {
+    background-color: transparent;
+    cursor: grab;
+    color: #743ad5;
+}
+
+
+@media (max-width: 768px) {
+    .home-bg-container {
+        padding-top:55px; 
+        padding-bottom: 30px;
+    }
+
+    .NECLOGO {
+        width: 60%;
+        max-width: 120px;
+        margin-top:20px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 15px;
+
+    }
+
+    .Course-container {
+        font-size: 15px;
+        margin-top: 0px;
+        margin-bottom:5px;
+        text-align: left;
+    }
+
+    .Course-container li {
+        margin-bottom:5px;
+    }
+
+    .home-button1 {
+        font-size: 12px;
+        width:120px; 
+        padding: 10px 20px;
+    
+
+    }
+    .home-button2{
+        font-size: 12px;
+        width:140px; 
+        padding: 10px 20px;
+        margin-right:3px;
+    }
+
+    .Developed {
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .span {
+        font-size: 14px;
+    }
+
+    select {
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .home-bg-container {
+        padding-top:20px; 
+    }
+
+    .NECLOGO {
+        max-width: 180px; 
+    }
+
+    p {
+        font-size: 15px; 
+        margin-bottom: 0px;
+        margin-top:5px;
+    }
+
+    .Course-container {
+        font-size:18px; 
+        text-align: left;
+        margin-bottom: 0px;
+        margin-top:0px;
+    }
+
+    .home-button1 {
+        font-size: 12px; 
+        width: 100px;
+        margin-top:0px;
+    }
+    .home-button2 {
+        font-size: 12px; 
+        width: 130px;
+        margin-top:0px;
+    }
+
+    .Developed {
+        font-size: 18px; 
+    }
+
+    .span {
+        font-size: 18px;
+        font-weight: 500px;
+    }
+
+    select {
+        font-size: 10px; 
+    }
+}

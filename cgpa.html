@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CGPA Calculator (Equal Credits)</title>
+  <link rel="stylesheet" href="cgpa-style.css">
+</head>
+<body>
+  <div class="main-bg-container">
+    <div class="container">
+      <h1>CGPA Calculator</h1>
+      <form id="cgpaForm">
+        <div id="semesterInputs">
+          <div class="subject">
+            <label>Semester 1 SGPA:</label>
+            <input type="number" class="sgpa" placeholder="SGPA" step="0.01" required>
+          </div>
+        </div>
+        <button type="button" onclick="addSemester()">+ Add Semester</button>
+        <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+      </form>
+      <h1 id="cgpaResult"></h1>
+      <a href="NECHOME.HTML"><button type="button">Back</button></a>
+    </div>
+  </div>
+  <script src="cgpa.js"></script>
+</body>
+</html>

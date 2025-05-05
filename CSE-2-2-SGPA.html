@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SGPA Calculator</title>
+  <link rel="stylesheet" href="p-cal.css">
+</head>
+<body>
+  <div class="main-bg-container">
+  <div class="container">
+    <h1>SGPA Calculator</h1>
+    <form id="sgpaForm">
+      <div class="subject">
+        <label>MEFA:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>P&S:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>OS:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>DBMS:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>SE:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>OS LAB:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>DBMS LAB:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>DBMS LAB:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+
+      <div class="subject">
+        <label>DTI LAB:</label>
+        <input type="number" placeholder="Grade Point" class="grade" required>
+        <input type="number" placeholder="Credits" class="credit" required>
+      </div>
+  
+      <button type="button" onclick="calculateSGPA()">Calculate SGPA</button>
+    </form>
+    <h1 id="result"></h1>
+    <a href="SGPA-selecting.html"><button type="button">Back</button></a>
+</div>
+
+  </div>
+
+  <script src="p-cal.js"></script>
+</body>
+</html>
