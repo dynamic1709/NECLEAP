@@ -1,12 +1,12 @@
-// Validate credit input (must be between 1 and 3)
+// Validate credit input (must be between 0.5 and 3)
 function validateCredit(input) {
   const value = parseFloat(input.value);
   if (!isNaN(value)) {
     if (value > 3) {
       alert('Credit cannot be more than 3.');
       input.value = '';
-    } else if (value < 1) {
-      alert('Credit must be at least 1.');
+    } else if (value < 0.5) {
+      alert('Credit must be at least 0.5.');
       input.value = '';
     }
   }

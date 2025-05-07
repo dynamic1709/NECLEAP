@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
 }
 
 .home-bg-container {
@@ -184,6 +184,7 @@ select {
 
     .span {
         font-size: 14px;
+        font-weight:500;
     }
 
     select {
@@ -231,7 +232,7 @@ select {
 
     .span {
         font-size: 18px;
-        font-weight: 500px;
+        font-weight:1000px;
     }
 
     select {
