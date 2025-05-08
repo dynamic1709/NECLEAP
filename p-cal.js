@@ -1,23 +1,23 @@
-// Validate credit input (must be between 0.5 and 3)
+// Validate credit input (must be between 0 and 3)
 function validateCredit(input) {
   const value = parseFloat(input.value);
   if (!isNaN(value)) {
     if (value > 3) {
       alert('Credit cannot be more than 3.');
       input.value = '';
-    } else if (value < 0.5) {
-      alert('Credit must be at least 0.5.');
+    } else if (value < 0) {
+      alert('Credit must be at least 0.');
       input.value = '';
     }
   }
 }
 
-// Validate grade input (must be between 6 and 10)
+// Validate grade input (must be between 5 and 10)
 function validateGrade(input) {
   const value = parseFloat(input.value);
   if (!isNaN(value)) {
-    if (value < 6) {
-      alert('Grade below 6 is considered a FAIL. Please enter 6 to 10.');
+    if (value < 5) {
+      alert('Grade below 5 is considered a FAIL. Please enter 5 to 10.');
       input.value = '';
     } else if (value > 10) {
       alert('Grade cannot be more than 10.');
@@ -57,7 +57,7 @@ function calculateSGPA() {
       continue;
     }
 
-    if (grade < 6) {
+    if (grade < 5) {
       hasFail = true;
       continue;
     }
