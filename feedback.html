@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Feedback - NEC</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <style>
     body {
       background-color: #000;
@@ -59,46 +60,51 @@
     .star-rating label:hover ~ label {
       color: #ffcc00;
     }
+
+    #reader {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
 
   <div class="feedback-container">
     <h3 class="text-center mb-4">We value your feedback! 💬</h3>
-    <form action="https://script.google.com/macros/s/AKfycbwWzCDisK9mh0LcRLnnbRqoE8gzc7ysfOxF5KztugZm23Y_RSDM570ryhBiny081PHl/exec" method="POST">
-      <div class="form-group">
-        <label for="email">Your Email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" autocomplete="email" required />
-      </div>
-      
 
-        <div class="form-group">
-          <label for="name">Your Name & Branch</label>
-          <input type="text" class="form-control" id="name" name="branch" placeholder="Enter your name and branch" required />
-        </div>
+    <div id="reader"></div>
+
+    <form action="https://script.google.com/macros/s/AKfycbwWzCDisK9mh0LcRLnnbRqoE8gzc7ysfOxF5KztugZm23Y_RSDM570ryhBiny081PHl/exec" method="POST">
       
-        <div class="form-group">
-          <label>Your Rating</label><br />
-          <div class="star-rating">
-            <input type="radio" id="star5" name="rating" value="5" required />
-            <label for="star5">&#9733;</label>
-            <input type="radio" id="star4" name="rating" value="4" />
-            <label for="star4">&#9733;</label>
-            <input type="radio" id="star3" name="rating" value="3" />
-            <label for="star3">&#9733;</label>
-            <input type="radio" id="star2" name="rating" value="2" />
-            <label for="star2">&#9733;</label>
-            <input type="radio" id="star1" name="rating" value="1" />
-            <label for="star1">&#9733;</label>
-          </div>
+      <input type="hidden" id="barcode" name="barcode" required>
+
+      <div class="form-group">
+        <label for="name">Your Name & Branch</label>
+        <input type="text" class="form-control" id="name" name="branch" placeholder="Enter your name and branch" required />
+      </div>
+
+      <div class="form-group">
+        <label>Your Rating</label><br />
+        <div class="star-rating">
+          <input type="radio" id="star5" name="rating" value="5" required />
+          <label for="star5">&#9733;</label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4">&#9733;</label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3">&#9733;</label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2">&#9733;</label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1">&#9733;</label>
         </div>
-      
-        <div class="form-group mt-3">
-          <label for="feedback">Your Comments</label>
-          <textarea class="form-control" id="feedback" name="comments" rows="4" placeholder="Write your thoughts here..." required></textarea>
-        </div>
-      
-        <button type="submit" class="btn btn-gradient btn-block">Submit Feedback</button>
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="feedback">Your Comments</label>
+        <textarea class="form-control" id="feedback" name="comments" rows="4" placeholder="Write your thoughts here..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gradient btn-block">Submit Feedback</button>
     </form>
 
     <div class="d-flex flex-row justify-content-end">
@@ -107,6 +113,25 @@
       </a>
     </div>    
   </div>
+
+  <script>
+    function onScanSuccess(decodedText, decodedResult) {
+      document.getElementById('barcode').value = decodedText;
+      html5QrcodeScanner.clear();
+      alert("Scanned: " + decodedText);
+    }
+
+    function onScanFailure(error) {
+      // You can log or handle errors here if needed
+    }
+
+    let html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+      fps: 10,
+      qrbox: 250
+    });
+
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+  </script>
 
 </body>
 </html>
