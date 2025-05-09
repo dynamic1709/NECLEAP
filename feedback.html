@@ -1,137 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Feedback - NEC</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Roboto', sans-serif;
-      padding-top: 50px;
-    }
+    <meta charset="UTF-8">
+    <title>Feedback - College ID Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            padding-top: 20px;
+            text-align: center;
+        }
 
-    .feedback-container {
-      max-width: 600px;
-      margin: auto;
-      background: #111;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #b03fe1;
-    }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #b03fe1;
+        }
 
-    label {
-      color: #d53a9d;
-    }
+        h3 {
+            margin-bottom: 20px;
+        }
 
-    .btn-gradient {
-      background: linear-gradient(to right, #743ad5, #d53a9d);
-      color: white;
-      border: none;
-    }
+        #reader {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
 
-    .btn-gradient:hover {
-      background: transparent;
-      color: #00aaff;
-      border: 1px solid #743ad5;
-    }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
 
-    .star-rating {
-      direction: rtl;
-      display: inline-flex;
-      font-size: 1.5rem;
-      justify-content: center;
-    }
+        label {
+            color: #d53a9d;
+        }
 
-    .star-rating input[type="radio"] {
-      display: none;
-    }
+        .btn-gradient {
+            background: linear-gradient(to right, #743ad5, #d53a9d);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
 
-    .star-rating label {
-      color: #555;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
+        .btn-gradient:hover {
+            background: transparent;
+            color: #00aaff;
+            border: 1px solid #743ad5;
+        }
 
-    .star-rating input[type="radio"]:checked ~ label,
-    .star-rating label:hover,
-    .star-rating label:hover ~ label {
-      color: #ffcc00;
-    }
+        .star-rating {
+            direction: rtl;
+            display: inline-flex;
+            font-size: 1.5rem;
+            justify-content: center;
+        }
 
-    #reader {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  </style>
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            color: #555;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ffcc00;
+        }
+
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h3 class="text-center">College ID Scanner</h3>
 
-  <div class="feedback-container">
-    <h3 class="text-center mb-4">We value your feedback! 💬</h3>
+        <div id="reader"></div>
 
-    <div id="reader"></div>
+        <form id="feedbackForm" action="" method="POST">
+            <input type="hidden" id="barcode" name="barcode" required>
 
-    <form action="https://script.google.com/macros/s/AKfycbwWzCDisK9mh0LcRLnnbRqoE8gzc7ysfOxF5KztugZm23Y_RSDM570ryhBiny081PHl/exec" method="POST">
-      
-      <input type="hidden" id="barcode" name="barcode" required>
+            <div class="form-group">
+                <label for="name">Your Name & Branch</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name and branch" required />
+            </div>
 
-      <div class="form-group">
-        <label for="name">Your Name & Branch</label>
-        <input type="text" class="form-control" id="name" name="branch" placeholder="Enter your name and branch" required />
-      </div>
+            <div class="form-group">
+                <label>Your Rating</label><br />
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" required />
+                    <label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label for="star1">&#9733;</label>
+                </div>
+            </div>
 
-      <div class="form-group">
-        <label>Your Rating</label><br />
-        <div class="star-rating">
-          <input type="radio" id="star5" name="rating" value="5" required />
-          <label for="star5">&#9733;</label>
-          <input type="radio" id="star4" name="rating" value="4" />
-          <label for="star4">&#9733;</label>
-          <input type="radio" id="star3" name="rating" value="3" />
-          <label for="star3">&#9733;</label>
-          <input type="radio" id="star2" name="rating" value="2" />
-          <label for="star2">&#9733;</label>
-          <input type="radio" id="star1" name="rating" value="1" />
-          <label for="star1">&#9733;</label>
-        </div>
-      </div>
+            <div class="form-group">
+                <label for="feedback">Your Comments</label>
+                <textarea class="form-control" id="feedback" name="comments" rows="3" placeholder="Write your thoughts here..." required></textarea>
+            </div>
 
-      <div class="form-group mt-3">
-        <label for="feedback">Your Comments</label>
-        <textarea class="form-control" id="feedback" name="comments" rows="4" placeholder="Write your thoughts here..." required></textarea>
-      </div>
+            <button type="submit" class="btn btn-gradient btn-block">Submit Feedback</button>
+        </form>
+    </div>
 
-      <button type="submit" class="btn btn-gradient btn-block">Submit Feedback</button>
-    </form>
+    <script>
+        let html5QrcodeScanner;
+        let googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbwWzCDisK9mh0LcRLnnbRqoE8gzc7ysfOxF5KztugZm23Y_RSDM570ryhBiny081PHl/exec";
 
-    <div class="d-flex flex-row justify-content-end">
-      <a href="NECHOME.HTML">
-        <button class="btn btn-gradient mt-4 mb-1">Back</button>
-      </a>
-    </div>    
-  </div>
+        function onScanSuccess(decodedText, decodedResult) {
+            document.getElementById('barcode').value = decodedText;
+            html5QrcodeScanner.clear();
+            alert("Scanned ID: " + decodedText);
 
-  <script>
-    function onScanSuccess(decodedText, decodedResult) {
-      document.getElementById('barcode').value = decodedText;
-      html5QrcodeScanner.clear();
-      alert("Scanned: " + decodedText);
-    }
+            fetch(googleAppsScriptUrl, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    barcode: decodedText,
+                    action: 'updateBarcode'
+                })
+            })
+            .then(response => {
+                console.log("Barcode sent to Google Sheet");
+            })
+            .catch(error => {
+                console.error("Error sending barcode to Google Sheet:", error);
+            });
+        }
 
-    function onScanFailure(error) {
-      // You can log or handle errors here if needed
-    }
+        function onScanFailure(error) {
+            console.warn(`Code scan error = ${error}`);
+        }
 
-    let html5QrcodeScanner = new Html5QrcodeScanner("reader", {
-      fps: 10,
-      qrbox: 250
-    });
+        function startScanner() {
+            html5QrcodeScanner = new Html5QrcodeScanner(
+                "reader",
+                {
+                    fps: 10,
+                    qrbox: 200,
+                    formatsToSupport: [
+                      Html5QrcodeSupportedFormats.CODE_128,
+                      Html5QrcodeSupportedFormats.CODE_39,
+                      Html5QrcodeSupportedFormats.EAN_13,
+                      Html5QrcodeSupportedFormats.EAN_8,
+                      Html5QrcodeSupportedFormats.UPC_A,
+                      Html5QrcodeSupportedFormats.UPC_E,
+                    ]
+                },
+                false
+            );
+            html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+        }
 
-    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-  </script>
+        window.onload = function() {
+            startScanner();
 
+            const feedbackForm = document.getElementById('feedbackForm');
+            feedbackForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const rating = document.querySelector('input[name="rating"]:checked').value;
+                const comments = document.getElementById('feedback').value;
+                const barcode = document.getElementById('barcode').value;
+
+
+                fetch(googleAppsScriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        action: 'submitForm',
+                        name: name,
+                        rating: rating,
+                        comments: comments,
+                        barcode: barcode,
+                    }),
+                })
+                .then((response) => {
+                    console.log('Form data sent successfully!');
+                    alert('Thank you!');
+                    feedbackForm.reset();
+                    startScanner();
+                })
+                .catch((error) => {
+                    console.error('Error sending form data:', error);
+                    alert('Error!');
+                });
+            });
+        };
+    </script>
 </body>
 </html>
