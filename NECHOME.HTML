@@ -42,7 +42,8 @@
                     <select id="select1" onchange="setLink()">
                         <option value="">SELECT</option>
                         <option value="AI">CSE(AI)</option>
-                        <option value="AI&ML">CSE(AI&ML)</option>
+                        <option value="CSE(AIML)">CSE(AI&ML)</option>
+                        <option value="AIML">AIML</option>
                         <option value="CSE">CSE</option>
                         <option value="IT">IT</option>
                         <option value="CS">CSE(CS)</option>
@@ -125,7 +126,9 @@
 
             if (choice1 === "AI" && choice2 === "R23") {
                 finalLink = "AI-selecting.html";
-            } else if (choice1 === "AI&ML" && choice2 === "R23") {
+            } else if (choice1 === "CSE(AIML)" && choice2 === "R23") {
+                finalLink = "CSE(AIML)-selecting.html";
+            }else if (choice1 === "AIML" && choice2 === "R23") {
                 finalLink = "AIML-selecting.html";
             } else if (choice1 === "CSE" && choice2 === "R23") {
                 finalLink = "CSE-selecting.html";
